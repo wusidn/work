@@ -1,0 +1,21 @@
+﻿Build started 3/11/2015 11:12:29 PM.
+     1>Project "C:\Projects\Engine\source\Engine.vcxproj" on node 2 (Build target(s)).
+     1>ClCompile:
+         C:\Program Files (x86)\Microsoft Visual Studio 14.0\VC\bin\CL.exe /c /ZI /nologo /W3 /WX- /sdl /Od /Oy- /D _MBCS /Gm /EHsc /RTC1 /MDd /GS /fp:precise /Zc:wchar_t /Zc:forScope /Zc:inline /Fo"Debug\\" /Fd"Debug\vc140.pdb" /Gd /TP /analyze- /errorReport:prompt EngineAppaction.cpp EngineObject.cpp ShaderElement.cpp ShaderProgram.cpp
+         ShaderProgram.cpp
+         ShaderElement.cpp
+     1>c:\projects\engine\source\shaderelement.cpp(40): warning C4244: '=': conversion from 'std::streamoff' to 'int', possible loss of data
+         EngineObject.cpp
+         EngineAppaction.cpp
+         Generating Code...
+       Link:
+         C:\Program Files (x86)\Microsoft Visual Studio 14.0\VC\bin\link.exe /ERRORREPORT:PROMPT /OUT:"C:\Projects\Engine\Debug\Engine.exe" /INCREMENTAL /NOLOGO kernel32.lib user32.lib gdi32.lib winspool.lib comdlg32.lib advapi32.lib shell32.lib ole32.lib oleaut32.lib uuid.lib odbc32.lib odbccp32.lib /MANIFEST /MANIFESTUAC:"level='asInvoker' uiAccess='false'" /manifest:embed /Debug /PDB:"C:\Projects\Engine\Debug\Engine.pdb" /TLBID:1 /DYNAMICBASE /NXCOMPAT /IMPLIB:"C:\Projects\Engine\Debug\Engine.lib" /MACHINE:X86 Debug\EngineObject.obj
+         Debug\EngineAppaction.obj
+         Debug\ShaderElement.obj
+         Debug\ShaderProgram.obj
+         Engine.vcxproj -> C:\Projects\Engine\Debug\Engine.exe
+     1>Done Building Project "C:\Projects\Engine\source\Engine.vcxproj" (Build target(s)).
+
+Build succeeded.
+
+Time Elapsed 00:00:02.36
