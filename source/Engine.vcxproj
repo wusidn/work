@@ -19,16 +19,20 @@
     </ProjectConfiguration>
   </ItemGroup>
   <ItemGroup>
-    <ClCompile Include="EngineObject.cpp" />
-    <ClCompile Include="EngineAppaction.cpp" />
+    <ClCompile Include="Object.cpp" />
+    <ClCompile Include="Appaction.cpp" />
+    <ClCompile Include="File.cpp" />
     <ClCompile Include="ShaderElement.cpp" />
     <ClCompile Include="ShaderProgram.cpp" />
+    <ClCompile Include="Vec4.cpp" />
   </ItemGroup>
   <ItemGroup>
-    <ClInclude Include="EngineObject.h" />
-    <ClInclude Include="EnginePortal.h" />
+    <ClInclude Include="Object.h" />
+    <ClInclude Include="Portal.h" />
+    <ClInclude Include="File.h" />
     <ClInclude Include="ShaderElement.h" />
     <ClInclude Include="ShaderProgram.h" />
+    <ClInclude Include="Vec4.h" />
   </ItemGroup>
   <ItemGroup>
     <Text Include="..\Shader\triangles.frag">

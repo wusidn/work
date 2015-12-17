@@ -28,7 +28,7 @@ ShaderProgram * ShaderProgram::create(const list<ShaderElement *> & shaderElemen
 
 const bool ShaderProgram::init(void)
 {
-	if (!EngineObject::init())
+	if (!Object::init())
 	{
 		return false;
 	}

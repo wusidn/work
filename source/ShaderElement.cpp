@@ -26,31 +26,10 @@ ShaderElement * ShaderElement::createWithShaderCode(const GLuint type, const str
 	return result;
 }
 
-const string ShaderElement::getShaderSource(const string & filePath)
-{
-	string result;
-	ifstream fileStream;
-	int len;
-	fileStream.open(filePath.c_str(), ios::out);
-	if (!fileStream.is_open())
-	{
-		return "";
-	}
-	fileStream.seekg(0, ios::end);
-	len = fileStream.tellg();
-	fileStream.seekg(0, ios::beg);
-
-	char * buffer = new char[len + 1];
-	buffer[len] = 0;
-	fileStream.read(buffer, len);
-	result = string(buffer);
-	delete[] buffer;
-	return result;
-}
 
 const bool ShaderElement::init()
 {
-	if (!EngineObject::init())
+	if (!Object::init())
 	{
 		return false;
 	}
@@ -59,7 +38,7 @@ const bool ShaderElement::init()
 
 const bool ShaderElement::initWithShaderCode(const GLuint type, const string & code)
 {
-	if (!EngineObject::init())
+	if (!Object::init())
 	{
 		return false;
 	}
