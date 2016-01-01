@@ -1,0 +1,16 @@
+Debug/
+Release/
+*.log
+*.obj
+*.pdb
+*.tlog
+*.exe
+*.ncb
+*.plg
+*.pch
+*.idb
+*.exp
+*.aps
+*.opt
+*.sdf
+*.ipch
