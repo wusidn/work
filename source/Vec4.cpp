@@ -5,7 +5,7 @@ Vec4::Vec4() {
 	Vec4(0.0, 0.0, 0.0);
 }
 
-Vec4::Vec4(const GLfloat x, const GLfloat y, const GLfloat z) {
+Vec4::Vec4(const float x, const float y, const float z) {
 
 	Vec4(x, y, z, 0.0);
 }
@@ -15,19 +15,19 @@ Vec4::Vec4(const Vec4 & source) {
 	Vec4(source.x, source.y, source.z, source.w);
 }
 
-Vec4::Vec4(const GLfloat x, const GLfloat y, const GLfloat z, const GLfloat w) {
+Vec4::Vec4(const float x, const float y, const float z, const float w) {
 	this->x = x;
 	this->y = y;
 	this->z = z;
 	this->w = w;
 }
 
-const GLfloat Vec4::dotProduct(const Vec4 & operand)
+const float Vec4::dot(const Vec4 & operand)
 {
 	return this->x * operand.x + this->y * operand.y + this->z * operand.z + this->w * operand.w;
 }
 
-const Vec4 Vec4::crossProduct(const Vec4 & operand)
+const Vec4 Vec4::cross(const Vec4 & operand)
 {
 	return Vec4(
 			this->y * operand.z - this->z * operand.y,
@@ -36,7 +36,7 @@ const Vec4 Vec4::crossProduct(const Vec4 & operand)
 		);
 }
 
-Vec4 Vec4::operator*(const GLfloat operand)
+Vec4 Vec4::operator*(const float operand)
 {
 	return Vec4(this->x * operand,
 				this->y * operand,

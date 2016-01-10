@@ -2,6 +2,7 @@
 #include "ShaderElement.h"
 #include "ShaderProgram.h"
 #include "File.h"
+#include "Node.h"
 
 #include <gl\glew.h>
 #include <gl\freeglut.h>
@@ -34,7 +35,7 @@ int main(int argc, char ** argv)
 	engine_portal_init();
 
 	glutDisplayFunc(engine_portal_display);
-
+	glutIdleFunc(engine_portal_idle);
 
 	glutMainLoop();
 	return 0;
@@ -178,4 +179,7 @@ void engine_portal_idle(void)
 {
 	engine_portal_display();
 	//static int  
+
+	//Node * a = Node::create();
+
 }

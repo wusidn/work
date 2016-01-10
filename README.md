@@ -1,4 +1,4 @@
-# <center> Engine </center>
+# Engine
 ---
 ```
 program: Engine
