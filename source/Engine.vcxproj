@@ -36,6 +36,7 @@
     <ClInclude Include="File.h" />
     <ClInclude Include="ShaderElement.h" />
     <ClInclude Include="ShaderProgram.h" />
+    <ClInclude Include="Size.h" />
     <ClInclude Include="Vec4.h" />
   </ItemGroup>
   <ItemGroup>

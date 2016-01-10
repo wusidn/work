@@ -12,17 +12,22 @@ public:
 	float x, y, z, w;
 
 
-	//static Vec4 * create();
-	//static Vec4 * create(const float a);
-
 	Vec4();
-	Vec4(const float x, const float y, const float z);
+	Vec4(const float a);
 	Vec4(const Vec4 & source);
+	Vec4(const float x, const float y, const float z);
 	Vec4(const float x, const float y, const float z, const float w);
 
+	static Vec4 * create();
+	static Vec4 * create(const float a);
+	static Vec4 * create(const Vec4 & source);
+	static Vec4 * create(const float x, const float y, const float z);
+	static Vec4 * create(const float x, const float y, const float z, const float w);
 
-	//virtual const bool init(const float x, const float y, const float z, const float w);
-	//const void stack_init(const float x, const float y, const float z, const float w);
+
+
+	virtual const bool init(const float x, const float y, const float z, const float w);
+	const void stack_init(const float x, const float y, const float z, const float w);
 
 
 	const float dot(const Vec4 & operand);

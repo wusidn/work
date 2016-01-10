@@ -2,7 +2,7 @@
 #ifndef __ENGINE_OBJECT_H__
 #define __ENGINE_OBJECT_H__
 
-#include <vector>
+#include <list>
 #include <mutex>
 
 
@@ -15,13 +15,15 @@ public:
 	virtual const bool init();
 
 	void retain();
-	void autorelease();
+	void autoRelease();
 	void release();
+
+	static void __depositaryClean();
 
 private:
 	int referenceCount;
 
-	static vector<Object *> * depositary;
+	static list<Object *> * depositary;
 	static mutex mtx;
 	
 };

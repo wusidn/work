@@ -1,26 +1,28 @@
 ﻿#include "Object.h"
 #include <iostream>
 
-vector<Object *> * Object::depositary = nullptr;
+list<Object *> * Object::depositary = nullptr;
 mutex Object::mtx;
 
+//初始化对象
 const bool Object::init() {
-	//实现内存管理机制代码
 
-	if (depositary == nullptr) {
-		depositary = new vector<Object *>();
+	if (!depositary) {
+		depositary = new list<Object *>();
 	}
-	this->autorelease();
+	this->autoRelease();
 
 	return true;
 }
 
+//持久化
 void Object::retain()
 {
 	this->referenceCount++;
 }
 
-void Object::autorelease()
+//加入托管机制
+void Object::autoRelease()
 {
 	mtx.lock();
 	depositary->push_back(this);
@@ -31,4 +33,25 @@ void Object::autorelease()
 void Object::release()
 {
 	--this->referenceCount;
+}
+
+//遍历所有托管对象， 清理垃圾
+void Object::__depositaryClean()
+{
+	if (!Object::depositary) {
+		return;
+	}
+
+
+	for (auto item = Object::depositary->begin(); item != Object::depositary->end(); ) {
+		if ((*item)->referenceCount > 0) {
+			++item;
+			continue;
+		}
+		Object * deleteObject = (*item);
+		++item;
+
+		Object::depositary->remove(deleteObject);
+		delete deleteObject;
+	}
 }

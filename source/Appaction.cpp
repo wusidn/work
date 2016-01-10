@@ -177,9 +177,11 @@ void engine_portal_display(void)
 
 void engine_portal_idle(void)
 {
+	Object::__depositaryClean();
+
 	engine_portal_display();
 	//static int  
 
-	//Node * a = Node::create();
+	Node * a = Node::create();
 
 }

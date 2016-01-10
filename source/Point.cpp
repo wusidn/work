@@ -1,23 +1,48 @@
 #include "Point.h"
 
+Point::Point()
+{
+	Point(0.0f);
+}
+
+Point::Point(const float a)
+{
+	Point(a, 1.0f);
+}
+
+Point::Point(const float a, const float w)
+{
+	Point(a, a, a, w);
+}
+
+Point::Point(const float x, const float y, const float z)
+{
+	Point(x, y, z, 1.0f);
+}
+
+Point::Point(const float x, const float y, const float z, const float w)
+{
+	stack_init(x, y, z, w);
+}
+
 Point * Point::create()
 {
-	return create(0);
+	return create(0.0f);
 }
 
-Point * Point::create(const float n)
+Point * Point::create(const float a)
 {
-	return create(n, 1.0);
+	return create(a, 1.0f);
 }
 
-Point * Point::create(const float n, const float w)
+Point * Point::create(const float a, const float w)
 {
-	return create(n, n, n, w);
+	return create(a, a, a, w);
 }
 
 Point * Point::create(const float x, const float y, const float z)
 {
-	return create(x, y, z, 1.0);
+	return create(x, y, z, 1.0f);
 }
 
 Point * Point::create(const float x, const float y, const float z, const float w)
@@ -35,11 +60,16 @@ const bool Point::init(const float x, const float y, const float z, const float 
 	if (!Object::init()) {
 		return false;
 	}
+	stack_init(x, y, z, w);
+	return true;
+}
+
+const void Point::stack_init(const float w, const float x, const float y, const float z)
+{
 	this->w = w;
 	this->x = x;
 	this->y = y;
 	this->z = z;
-	return true;
 }
 
 const Point & Point::operator=(const Point & operand)
@@ -50,7 +80,6 @@ const Point & Point::operator=(const Point & operand)
 	this->w = operand.w;
 
 	return * this;
-	// TODO: insert return statement here
 }
 
 const Point & Point::operator+(const Vec4 & operand)
@@ -61,5 +90,4 @@ const Point & Point::operator+(const Vec4 & operand)
 	this->z += operand.z;
 
 	return *this;
-	// TODO: insert return statement here
 }
